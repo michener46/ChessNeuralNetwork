@@ -63,7 +63,7 @@ test_loss = model.evaluate(X_test, y_test)
 print(f"Test loss: {test_loss}")
 
 # Save the model
-model.save('chess_model')
+model.save('chess_model.keras')
 
 # Output to indicate where the model is saved
 print("Model saved in the chess_model directory.")
