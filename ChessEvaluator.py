@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+from tensorflow.python.client import device_lib
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
