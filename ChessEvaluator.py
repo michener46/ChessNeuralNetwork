@@ -43,14 +43,15 @@ if os.path.exists(model_path):
 else:
     print("Creating new model...")
     model = Sequential([
-        Dense(64, activation='relu', input_shape=(64,)),
-        Dense(64, activation='relu'),
+        Dense(1024, activation='relu', input_shape=(64,)),
+        Dense(1024, activation='relu'),
+        Dense(1024, activation='relu'),
         Dense(1)  # Output layer: Predicting a single value
     ])
     model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Step 4: Train the Model
-model.fit(X_train, y_train, epochs=10, validation_split=0.1)
+model.fit(X_train, y_train, batch_size = 10000, epochs=100, validation_split=0.1)
 
 # Step 5: Evaluate the Model
 test_loss = model.evaluate(X_test, y_test)
