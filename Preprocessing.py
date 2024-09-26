@@ -1,5 +1,10 @@
-
 import json
+
+# Owen Michener
+# Preprocessing.py
+# April 19th, 2024
+# This is the code meant to preprocess all the data used in the ChessEvaluator.py file
+# This turns the fen string into an integer array which is easier to represent for me
 
 def count_lines(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -7,12 +12,12 @@ def count_lines(file_path):
 
 def fen_to_board_array(fen):
     piece_encoding = {
-        'p': 1, 'P': 2,
-        'n': 3, 'N': 4,
-        'b': 5, 'B': 6,
-        'r': 7, 'R': 8,
-        'q': 9, 'Q': 10,
-        'k': 11, 'K': 12
+        'p': 2, 'P': 1,
+        'n': 4, 'N': 3,
+        'b': 6, 'B': 5,
+        'r': 8, 'R': 7,
+        'q': 10, 'Q': 9,
+        'k': 12, 'K': 11
     }
     board = []
     for char in fen:

@@ -7,6 +7,12 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.models import load_model
 
+# Owen Michener
+# ChessEvaluator.py
+# April 19th, 2024
+# This is the code used to train a neural network on chess using the
+# data found on lichess.org.
+
 # Disable oneDNN custom operations for consistent floating-point calculations
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
@@ -22,6 +28,8 @@ with open(file_path, 'r', encoding='utf-8') as file:
     for line in file:
         data = json.loads(line)
         if 'board_position' in data and 'evals' in data and data['evals'][0]['pvs']:
+            if i == 0:
+                print(data['board_position'])
             i += 1
             if i % 100000 == 0:
                 print(i)
